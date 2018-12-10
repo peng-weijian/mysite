@@ -30,13 +30,15 @@ class AuthorDetail(models.Model):
     email = models.EmailField()
     address = models.CharField(max_length=50)
     birthday = models.DateField()
-    author = models.OneToOneField(Author)
+    author = models.OneToOneField(Author,on_delete=models.CASCADE,)
+    #在django2.0后，定义外键和一对一关系的时候需要加on_delete选项，此参数为了避免两个表里的数据不一致问题，不然会报错：
+    #TypeError: __init__() missing 1 required positional argument: 'on_delete'
 
 
 class Book(models.Model):
     title = models.CharField(max_length=100)
-    authors = models.ManyToManyField(Author)
-    publisher = models.ForeignKey(Publisher)
+    authors = models.ManyToManyField(Author)    #多对多，多个作者对应多本书，自动创建第三张表
+    publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE,)    #一对多，一个出版社对应多本书。在book表创建外键
     publication_date = models.DateField()
     price = models.DecimalField(max_digits=5, decimal_places=2, default=10)
 

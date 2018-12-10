@@ -22,4 +22,5 @@ urlpatterns = [
     # 根据app对路由规则进行分类
     path('blog/',include('blog.urls')),
     path('tmplts/',include('testTemplates.urls')),
+    path('models/',include('testModels.urls')),
 ]
