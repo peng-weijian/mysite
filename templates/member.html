@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>show member</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td>年龄</td>
+    </tr>
+
+    {% for member in member_list %}
+        <tr>
+            <td>{{ member.name|upper }}</td>
+            <td>{{ member.age|add:1 }}</td>
+        </tr>
+    {% endfor %}
+
+</table>
+
+</body>
+</html>

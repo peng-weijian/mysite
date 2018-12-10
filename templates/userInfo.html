@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户信息页面</title>
+</head>
+<body>
+<form action="/blog/userInfo/" method="POST">
+    <p>姓名：<input type="text" name="username"></p>
+    <p>性别：<input type="text" name="gender"></p>
+    <p>年龄：<input type="text" name="age"></p>
+    <p><input type="submit" value="提交"></p>
+
+
+</form>
+
+<table border="1">
+    <tr>
+        <td>姓名</td>
+        <td>性别</td>
+        <td>年龄</td>
+    </tr>
+    {% for user in user_list %}
+    <tr>
+        <td>{{ user.username }}</td>
+        <td>{{ user.gender }}</td>
+        <td>{{ user.age }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+</body>
+</html>

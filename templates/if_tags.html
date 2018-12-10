@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if 演示</title>
+</head>
+<body>
+
+<form action="/tmplts/if/" method="POST">
+    <p>请输入数字：<input type="text" name="number"></p>
+    <p><input type="submit" value="提交"></p>
+</form>
+
+{% if number > 200 %}
+    <p>大于 200</p>
+{% elif number < 200 %}
+    <p>小于 200</p>
+{% elif number == 200 %}
+    <p>等于 200</p>
+{% else %}
+    <p>!! {{ number }} !! 呦吼吼 !! 请输入数字 !!</p>
+{% endif %}
+
+</body>
+</html>
