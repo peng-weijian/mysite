@@ -4,10 +4,8 @@ from django.db import models
 
 class Publisher(models.Model):
     name = models.CharField(max_length=30, verbose_name="名称")
-    address = models.CharField("地址", max_length=50)
     city = models.CharField('城市', max_length=60)
     state_province = models.CharField(max_length=30)
-    country = models.CharField(max_length=50)
     website = models.URLField()
 
     class Meta:
@@ -36,10 +34,9 @@ class AuthorDetail(models.Model):
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=100)
+    title = models.CharField(max_length=10)
     authors = models.ManyToManyField(Author)    #多对多，多个作者对应多本书，自动创建第三张表
     publisher = models.ForeignKey(Publisher,on_delete=models.CASCADE,)    #一对多，一个出版社对应多本书。在book表创建外键
-    publication_date = models.DateField()
     price = models.DecimalField(max_digits=5, decimal_places=2, default=10)
 
     def __str__(self):
