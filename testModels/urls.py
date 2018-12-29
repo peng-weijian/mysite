@@ -16,4 +16,7 @@ urlpatterns = [
     path('getdata/', views.get_data),
     path('deldata/', views.del_data),
     path('weijianPage/', views.weijianPage),
+    path('selectdata/', views.dataselect),
+    path('submit_book_info/', views.submit_book_info),
+    path('datafilter/', views.data_filter),
 ]

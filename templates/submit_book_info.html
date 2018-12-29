@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图书信息录入</title>
+</head>
+<body>
+<form action="/models/submit_book_info/" method="post">
+    <p>书名 <input type="text" name="title"></p>
+    <p>作者1 <input type="text" name="author_1"></p>
+    <p>作者2 <input type="text" name="author_2"></p>
+    <p>出版社 <input type="text" name="publisher"></p>
+    <p>价格 <input type="text" name="price"></p>
+    <p><input type="submit" name="提交"></p>
+</form>
+    <p>{{ success_info }}</p>
+
+</body>
+</html>
